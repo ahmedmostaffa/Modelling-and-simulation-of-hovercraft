@@ -1,0 +1,63 @@
+[System]
+Name='optm'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=3
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e'
+Range=[-1 1]
+NumMFs=3
+MF1='el':'trimf',[-1.8 -1 -0.2]
+MF2='em':'trimf',[-0.8 0 0.8]
+MF3='eh':'trimf',[0.2 1 1.8]
+
+[Input2]
+Name='ec'
+Range=[-1 1]
+NumMFs=3
+MF1='ol':'trimf',[-1.8 -1 -0.2]
+MF2='om':'trimf',[-0.8 0 0.8]
+MF3='oh':'trimf',[0.2 1 1.8]
+
+[Output1]
+Name='kp'
+Range=[-1 1]
+NumMFs=3
+MF1='ecl':'trimf',[-1.8 -1 -0.2]
+MF2='ecm':'trimf',[-0.8 0 0.8]
+MF3='ech':'trimf',[0.2 1 1.8]
+
+[Output2]
+Name='ki'
+Range=[-1 1]
+NumMFs=3
+MF1='ecl':'trimf',[-1.8 -1 -0.2]
+MF2='ecm':'trimf',[-0.8 0 0.8]
+MF3='ech':'trimf',[0.2 1 1.8]
+
+[Output3]
+Name='kd'
+Range=[-1 1]
+NumMFs=3
+MF1='ecl':'trimf',[-1.8 -1 -0.2]
+MF2='ecm':'trimf',[-0.8 0 0.8]
+MF3='ech':'trimf',[0.2 1 1.8]
+
+[Rules]
+1 1, 1 1 1 (1) : 1
+1 2, 2 2 2 (1) : 1
+1 3, 2 2 2 (1) : 1
+2 1, 1 1 1 (1) : 1
+2 2, 2 2 2 (1) : 1
+2 3, 3 3 3 (1) : 1
+3 1, 2 2 2 (1) : 1
+3 2, 2 2 2 (1) : 1
+3 3, 3 3 3 (1) : 1
